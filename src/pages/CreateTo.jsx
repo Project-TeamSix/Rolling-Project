@@ -38,12 +38,20 @@ function CreateTo() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    let dataset;
 
-    const dataset = {
-      name: inputTo.value,
-      backgroundColor: colorOpt,
-      backgroundImageURL: imgOpt,
-    };
+    if (imgOpt) {
+      dataset = {
+        name: inputTo.value,
+        backgroundColor: colorOpt,
+        backgroundImageURL: imgOpt,
+      };
+    } else {
+      dataset = {
+        name: inputTo.value,
+        backgroundColor: colorOpt,
+      };
+    }
 
     try {
       setIsloading(true);
